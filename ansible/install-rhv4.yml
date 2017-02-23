@@ -1,0 +1,8 @@
+---
+
+- hosts: management
+  connection: local
+  name: "Install RHV RPMs"
+  become: yes
+  roles:
+    - role: install-rhv4

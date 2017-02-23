@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: xCAT Developers
+  description: Install RHV on localhost
+  min_ansible_version: 1.9
+  platforms:
+  - name: RHEL
+    versions:
+    - 7.3
+  categories:
+  - cloud
+dependencies: []

@@ -1,0 +1,12 @@
+---
+- name: Create RHV repository
+  copy:
+    content: |
+      [rhv4]
+      name=RHV 4.0
+      baseurl={{rhv_location}}
+      enabled=1
+    dest: /etc/yum.repos.d/rhv4.repo
+
+- name: install 
+  action: yum name=qemu-kvm-rhev state=installed
