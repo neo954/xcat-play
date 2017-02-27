@@ -1,14 +1,14 @@
 ---
   management:
-    hostname: "c910f05c01bc01k10"
-    provision_address: "10.5.101.10"
+    hostname: "c910f03c01p19"
+    provision_address: "10.3.1.19"
     dns:
-      nameserver: "10.5.101.10"
-      forwarders: "10.0.0.103"
-      domain: "cluster.com"
-    external_ntp_server: ""
+      nameserver: "10.0.0.103"
+      forwarders: ""
+      domain: "pok.stglabs.ibm.com"
+    external_ntp_server: "10.0.0.103"
     osimage:
-      "ubuntu16.04.1-x86_64-install-compute": "/iso/ubuntu-16.04.1-server-amd64.iso"
+      "rhels7.3-ppc64le-install-compute": "/media/xcat/iso/redhat/7.3/GA/RHEL-7.3-20161019.0-Server-ppc64le-dvd1.iso"
       # "ubuntu-14.04.1-server-ppc64el-install-compute": "/iso/ubuntu-14.04.1-server-ppc64el.iso"
 
   localhost:
@@ -17,16 +17,15 @@
   kvmhost:
     def_attrs:
       groups: "all"
-      ip: "10.5.101.1"
+      ip: "10.3.1.19"
 
   kvmguest1:
     def_attrs:
-      arch: "x86_64"
+      arch: "ppc64le"
       groups: "all"
-      ip: "10.5.101.60"
-      mac: "42:af:0a:05:65:6b"
+      ip: "10.3.1.101"
       mgt: "kvm"
-      netboot: "xnba"
+      netboot: "grub"
       serialport: "0"
       serialspeed: "115200"
       vmcpus: "1"
@@ -36,16 +35,16 @@
       vmnics: "br-eno1"
       vmstorage: "dir:///install/vms"
 
-    osimage: ubuntu16.04.1-x86_64-install-compute
-    vmdisksize: "10G"
+    osimage: rhels7.3-ppc64le-install-compute
+    vmdisksize: "6G"
 
   kvmguest2:
     def_attrs:
-      arch: "x86_64"
+      arch: "ppc64le"
       groups: "all"
-      ip: "10.5.101.61"
+      ip: "10.3.1.102"
       mgt: "kvm"
-      netboot: "xnba"
+      netboot: "grub"
       serialport: "0"
       serialspeed: "115200"
       vmcpus: "1"
@@ -55,5 +54,5 @@
       vmnics: "br-eno1"
       vmstorage: "dir:///install/vms"
 
-    osimage: ubuntu16.04.1-x86_64-install-compute
-    vmdisksize: "10G"
+    osimage: rhels7.3-ppc64le-install-compute
+    vmdisksize: "6G"
